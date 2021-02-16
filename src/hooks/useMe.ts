@@ -14,9 +14,9 @@ const GET_ME = gql`
 
 interface MeResult {
   me?: {
-    id?: number;
-    name?: string;
-    role?: string;
+    id: number;
+    name: string;
+    role: string;
   };
   loading: boolean;
   error?: ApolloError;

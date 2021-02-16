@@ -1,5 +1,6 @@
 import { Spinner } from "evergreen-ui";
 import React from "react";
+import ChartsMaps from "../components/ChartsMaps";
 import Header from "../components/Header";
 import { auth } from "../firebase";
 import useMe from "../hooks/useMe";
@@ -24,6 +25,34 @@ const Dashboard = () => {
     return (
       <div className=" w-full h-full">
         <Header />
+        <div className=" p-6 px-4 bg-white md:px-24">
+          <p className=" text-gray-700 text-3xl ">
+            Welcome Back <br className=" md:hidden" />
+            <span className=" font-bold">{me.name}</span>!
+          </p>
+        </div>
+        <div className=" flex flex-col md:flex-row p-4">
+          <div className=" w-full">
+            <div className=" w-full p-3">
+              {/*Charts, Maps*/}
+              <ChartsMaps />
+            </div>
+            <div className=" w-full p-3 flex flex-col md:flex-row">
+              <div className=" w-full">
+                {/*Users*/}
+                Users
+              </div>
+              <div className=" w-full">
+                {/*Drivers*/}
+                Drivers
+              </div>
+            </div>
+          </div>
+          <div className="w-full sm:w-2/3 md:w-1/3">
+            {/**Orders */}
+            <div className=" w-full p-3">Orders</div>
+          </div>
+        </div>
       </div>
     );
   }
