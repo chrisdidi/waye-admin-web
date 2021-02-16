@@ -20,7 +20,7 @@ const ChartsMaps = () => {
           />
         ))}
       </div>
-      <div className=" w-full bg-gray-100 rounded-r-lg rounded-b-lg overflow-hidden">
+      <div className=" container">
         {selected === "Maps" && (
           <Maps
             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbeNxirAVEL1p2-DEydum3tYTz1aNkvcQ&v=3.exp&libraries=geometry,drawing,places"

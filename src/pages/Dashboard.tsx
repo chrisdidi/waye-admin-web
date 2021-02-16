@@ -2,6 +2,8 @@ import { Spinner } from "evergreen-ui";
 import React from "react";
 import ChartsMaps from "../components/ChartsMaps";
 import Header from "../components/Header";
+import Orders from "../components/Orders";
+import Users from "../components/Users";
 import { auth } from "../firebase";
 import useMe from "../hooks/useMe";
 
@@ -23,7 +25,7 @@ const Dashboard = () => {
 
   if (!loading && me?.role === "Admin") {
     return (
-      <div className=" w-full h-full">
+      <div className=" w-full h-full pb-40">
         <Header />
         <div className=" p-6 px-4 bg-white md:px-24">
           <p className=" text-gray-700 text-3xl ">
@@ -39,18 +41,17 @@ const Dashboard = () => {
             </div>
             <div className=" w-full p-3 flex flex-col md:flex-row">
               <div className=" w-full">
-                {/*Users*/}
-                Users
-              </div>
-              <div className=" w-full">
-                {/*Drivers*/}
-                Drivers
+                <h1 className=" container-title">Orders</h1>
+                <Orders />
               </div>
             </div>
           </div>
           <div className="w-full sm:w-2/3 md:w-1/3">
             {/**Orders */}
-            <div className=" w-full p-3">Orders</div>
+            <div className=" w-full p-3">
+              <h1 className=" container-title">Users</h1>
+              <Users />
+            </div>
           </div>
         </div>
       </div>

@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
+
+.container-title {
+  @apply text-gray-700 font-bold text-lg;
+}
+
+.container {
+  @apply w-full bg-gray-100 rounded-r-lg rounded-b-lg overflow-hidden;
+}
 @tailwind utilities;
