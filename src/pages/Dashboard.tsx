@@ -14,7 +14,6 @@ const Dashboard = () => {
     auth().signOut();
   };
 
-  console.log(me);
   if (loading) {
     return (
       <div className=" h-screen w-screen flex items-center justify-center">

@@ -5,7 +5,7 @@ import OrderRow from "./OrderRow";
 
 const GET_ORDERS = gql`
   query {
-    order {
+    order(order_by: { created_at: desc }) {
       id
       user_id
       created_at
@@ -29,8 +29,19 @@ const Orders = () => {
   const { data, loading, error } = useQuery(GET_ORDERS);
   return (
     <Table className=" w-full container rounded-lg shadow-md">
-      <Table.Head className=" flex flex-row w-full p-3"></Table.Head>
-      <Table.Body className=" no-scrollbar border-2 border-gray-100 border-solid w-full max-h-56 h-full overflow-y-auto bg-white rounded-b-md">
+      <Table.Head className=" flex flex-row w-full">
+        <Table.Cell>
+          <p className=" text-gray-700 text-sm">Service</p>
+        </Table.Cell>
+        <Table.Cell>
+          <p className=" text-gray-700 text-sm">ID</p>
+        </Table.Cell>
+        <Table.Cell>
+          <p className=" text-gray-700 text-sm">Status</p>
+        </Table.Cell>
+        <Table.Cell></Table.Cell>
+      </Table.Head>
+      <Table.Body className=" no-scrollbar border-2 border-gray-100 border-solid w-full max-h-64 h-full overflow-y-auto bg-white rounded-b-md">
         {loading && (
           <div className=" w-full p-4 flex items-center justify-center">
             <Spinner />

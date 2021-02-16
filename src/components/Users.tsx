@@ -18,8 +18,10 @@ const GET_USERS = gql`
     }
   }
 `;
+
 const Users = () => {
   const [searchText, setSearchText] = useState("");
+
   const { data, loading, error } = useQuery(GET_USERS, {
     variables: {
       where:
