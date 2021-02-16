@@ -9,7 +9,7 @@ import {
 const Maps = withScriptjs(
   withGoogleMap((props: any) => {
     return (
-      <div className=" w-full h-80">
+      <div className=" w-full h-80 shadow-md">
         <GoogleMap
           defaultZoom={8}
           defaultCenter={{ lat: -34.397, lng: 150.644 }}

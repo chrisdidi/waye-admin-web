@@ -8,4 +8,25 @@
 .container {
   @apply w-full bg-gray-100 rounded-r-lg rounded-b-lg overflow-hidden;
 }
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-200;
+  background: #c7c7c7;
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  padding: 2px;
+  width: 3px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  @apply rounded-full w-1 bg-transparent;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 @tailwind utilities;

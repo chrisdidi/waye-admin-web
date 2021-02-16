@@ -1,6 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import { Spinner, Table } from "evergreen-ui";
 import React from "react";
+import OrderRow from "./OrderRow";
 
 const GET_ORDERS = gql`
   query {
@@ -29,7 +30,7 @@ const Orders = () => {
   return (
     <Table className=" w-full container rounded-lg shadow-md">
       <Table.Head className=" flex flex-row w-full p-3"></Table.Head>
-      <Table.Body className=" border-2 border-gray-100 border-solid w-full max-h-56 h-full overflow-y-auto bg-white rounded-b-md">
+      <Table.Body className=" no-scrollbar border-2 border-gray-100 border-solid w-full max-h-56 h-full overflow-y-auto bg-white rounded-b-md">
         {loading && (
           <div className=" w-full p-4 flex items-center justify-center">
             <Spinner />
@@ -38,8 +39,8 @@ const Orders = () => {
         {!loading && error?.message}
         {!loading &&
           (data?.order?.length > 0
-            ? data?.order.map((order) => {
-                return <p key={order.id}>{order.id}</p>;
+            ? data?.order.map((order, index) => {
+                return <OrderRow key={order.id} index={index} order={order} />;
               })
             : "No data found")}
       </Table.Body>

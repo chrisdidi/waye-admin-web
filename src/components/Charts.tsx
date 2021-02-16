@@ -33,6 +33,7 @@ const Charts = () => {
     loading: dailyLoading,
     error: dailyError,
   } = useSubscription(DAILY_ORDERS);
+
   return (
     <div className=" w-full flex flex-col md:flex-row p-2">
       <div className=" w-full bg-white rounded-md h-80 md:mr-1 mb-3 md:mb-0 flex items-center justify-center">
