@@ -24,31 +24,33 @@ const Dashboard = () => {
 
   if (!loading && me?.role === "Admin") {
     return (
-      <div className=" w-full h-full pb-40">
+      //bg-gradient-to-r from-purple-400 via-pink-500 to-red-500
+      //bg-gradient-to-r from-blue-200 to-indigo-500
+      <div className=" w-full h-full pb-40 bg-gradient-to-r from-blue-400 to-indigo-500">
         <Header />
-        <div className=" p-6 px-4 bg-white md:px-24">
-          <p className=" text-gray-700 text-3xl ">
+        <div className=" p-6 px-4  md:px-24">
+          <p className=" text-white text-3xl ">
             Welcome Back <br className=" md:hidden" />
-            <span className=" font-bold">{me.name}</span>!
+            <span className=" font-bold text-red-200">{me.name}</span>!
           </p>
         </div>
         <div className=" flex flex-col md:flex-row p-4">
           <div className=" w-full">
-            <div className=" w-full p-3">
+            <div className=" w-full p-3 animate-slide-up-03-out">
               {/*Charts, Maps*/}
               <ChartsMaps />
             </div>
             <div className=" w-full p-3 flex flex-col md:flex-row">
-              <div className=" w-full">
-                <h1 className=" container-title">Orders</h1>
+              <div className=" w-full animate-slide-up-1-out">
+                <h1 className=" container-title text-white">Orders</h1>
                 <Orders />
               </div>
             </div>
           </div>
           <div className="w-full sm:w-2/3 md:w-1/3">
             {/**Orders */}
-            <div className=" w-full p-3">
-              <h1 className=" container-title">Users</h1>
+            <div className=" w-full p-3 animate-slide-up-06-out">
+              <h1 className=" container-title text-white">Users</h1>
               <Users />
             </div>
           </div>

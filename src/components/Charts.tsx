@@ -36,7 +36,9 @@ const Charts = () => {
 
   return (
     <div className=" w-full flex flex-col md:flex-row p-2">
-      <div className=" w-full bg-white rounded-md h-80 md:mr-1 mb-3 md:mb-0 flex items-center justify-center">
+      <div className=" flex flex-col w-full items-start">
+        <p className=" m-2 text-gray-700 font-semibold">Daily Orders Count</p>
+      <div className=" w-full bg-white rounded-md h-80 md:mr-1 mb-3 md:mb-0 flex flex-col items-center justify-center">
         {!dailyLoading ? (
           dailyData?.daily_orders_analytic?.length > 0 ? (
             <VictoryChart theme={VictoryTheme.material} minDomain={{ y: 0 }}>
@@ -63,6 +65,9 @@ const Charts = () => {
           <Spinner />
         )}
       </div>
+      </div>
+      <div className=" flex flex-col w-full items-start">
+        <p className=" m-2 text-gray-700 font-semibold">Service Type Ratio</p>
       <div className=" w-full bg-white rounded-md h-80 md:ml-1 flex items-center justify-center">
         {!typeLoading ? (
           typeData && typeData?.order_types_analytic?.length > 0 ? (
@@ -82,6 +87,7 @@ const Charts = () => {
           <Spinner />
         )}
       </div>
+    </div>
     </div>
   );
 };
